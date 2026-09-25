@@ -1,0 +1,741 @@
+<head>
+<title>Getting started with your Third Person Game (article)</title>
+<style>
+div {
+ margin-left: 20%;
+ margin-right: 20%;
+ padding: 20px;
+ width: 60%;
+ border-left: 1px solid #ececec;
+ border-right: 1px solid #ececec;
+}
+h1, h2, h4 {
+ font-family: Roboto, sans-serif;
+ color: #383838;
+}
+
+h1 {
+ font-size: 3em;
+ padding-bottom: 0px;
+ margin-bottom: 10px;
+}
+h2 {
+ font-size: 2em;
+}
+h4 {
+ margin-top: 0px;
+ font-size: 1.5em;
+ font-weight: normal;
+ color: #5a5a5b;
+}
+p, li{
+ color: #5a5a5b;
+ font-family: Roboto, sans-serif;
+ font-size: 1em;
+}
+a {
+ color: #00bcd4;
+ text-decoration: none;
+ outline: none;
+ cursor: pointer;
+}
+a:hover {
+ text-decoration: underline;
+}
+.buttonImage {
+ background: url(img/gameControllerIcons.png) no-repeat -411px -511px;
+ width: 32px;
+ height: 32px;
+ display: inline-block;
+ transform: scale(.5);
+ vertical-align: middle;
+ margin: -10px -6px -4px -6px;
+}
+</style>
+</head>
+<body>
+<div>
+<h1>
+    <b>Getting started with your Third Person Game</b>
+</h1>
+<h4>
+	Difficulty: <b>Beginner</b>
+</h4>
+<p>
+        <img
+            width="100%"
+            src="img/clip_image002.png"
+        />
+</p>
+<h2>
+    <b>Introduction</b>
+</h2>
+<p>
+The <b>indie</b> game development is a trend nowadays. Recently, we can notice
+    some of the top triple-A developers leaving their jobs, where they use to lead huge
+    projects, to start their own game studios. Or even new talents, from
+    best-selling indie games studios, are refusing to move to major publishers,
+    sticking to their origins to focus on expanding and improving their
+    indie games franchises that made them popular.
+</p>
+<p>
+    With the indie games market in such evidence, game developers have more and
+    more tools to develop its own games nowadays. The <b>game engines</b>
+    itself, responsible for making the task of game creation faster and
+    simpler, are even more accessible, without the need of major
+investments. One of them in special, the <a target="_blank" href="https://unity3d.com/">Unity</a> game engine, with triple-A quality
+features, offers affordable conditions for small studios, and even a <b>free</b> personal version. This is a perfect fit for the indie market,
+    following its tendency to grow more and more.
+</p>
+<p>
+    The Unity creators also provide a great marketplace, the <b>Asset Store</b>, where it is
+    possible to acquire several professional level packages with fair prices. Such
+    assets can be considered one of the best allies of the indie studios, saving a lot of time
+    and money. There are even top quality, completely free packages to consider, that leaves nothing to be desired in comparison to paid alternatives.
+</p>
+<h2>
+    <b>What we will build</b>
+</h2>
+<p>
+In this tutorial, we will learn how to start creating a <b>3<sup>rd</sup> person </b>game, using a <b>free</b> starter
+    kit that we can acquire in the Asset Store. The
+    <a target="_blank" href="http://u3d.as/bgp">
+        3rd Person Controller + Fly Mode
+    </a>
+    package is one of the most popular in the Asset Store, and was chosen by the
+    editors as a
+    <a  target="_blank" 
+        href="https://assetstore.unity.com/lists/must-have-assets-25777"
+    >
+        must have asset
+    </a>
+    , an essential one for those who are getting started with Unity and the
+    store itself.
+</p>
+<p>
+    When we have completed this tutorial, we will have a fully functional
+    third-person walking simulation, that can <b>walk, jump strafe, aim</b>, and even
+    <b>fly</b> over the environment.
+</p>
+<h2>
+    <b>Prefer video format?</b>
+</h2>
+<p>
+    If you prefer an alternative version of this tutorial in video form, please
+    click <a target="_blank" href="https://www.youtube.com/watch?v=D7Ogk4DzsRI">here</a>.
+</p>
+<h2>
+    <b>Getting started</b>
+</h2>
+<p>
+    To complete this tutorial, you need to have the latest version of Unity,
+    and at least a personal free account. If you don’t have one yet,
+    please click <a target="_blank" href="https://store.unity.com/">here</a> to proceed to the
+    Unity website and follow the steps to choose a plan and download the game
+    engine.
+</p>
+<ul>
+    <li>
+        When ready, open the <b>Unity IDE</b>, and create a new
+        project.
+    </li>
+</ul>
+<p>
+Inside the project, the first thing we need is to add an    <b>environment</b> to navigate in. If you have any custom
+    scenario, you can import it right now and place it into the scene. To keep
+    it simple, we will just setup a plane as our ground, using one of Unity’s basic
+    3D objects.
+</p>
+<ul>
+    <li>
+On the editor menu, go to        <b>GameObject &gt; 3D Object &gt; Plane</b>.
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="413"
+        height="324"
+        src="img/clip_image004.jpg"
+    />
+</p>
+<ul>
+    <li>
+Select the <b>Plane</b> GameObject, under the        <b>Hierarchy</b>.
+    </li>
+    <li>
+        On the <b>Inspector</b> tab, scale it to 2, 0.01, 2.
+    </li>
+<li>
+    Ensure the position and rotation values for it are all 0.
+</li>
+<li>
+    Check the Convex option under the <b>Mesh Collider</b> section.
+</li>
+<li>
+Check the <b>Static</b> option on the upper right side.
+</li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="590"
+        height="263"
+        src="img/clip_image006.jpg"
+    />
+</p>
+<p>
+    Before proceeding, we will reduce the light intensity for better scene
+    view.
+</p>
+<ul>
+    <li>
+Select the <b>Directional Light</b> GameObject, under the        <b>Hierarchy</b>.
+    </li>
+    <li>
+        Change the <b>Intensity</b> value to 0.3.
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="602"
+        height="250"
+        src="img/clip_image008.jpg"
+    />
+</p>
+<p>
+    <b></b>
+</p>
+<h2>
+    <b>Downloading the package</b>
+</h2>
+<p>
+    If you have not yet downloaded the package, please click
+    on the banner above to get it:
+</p>
+<p>
+<iframe src="https://assetstore.unity.com/linkmaker/embed/package/28647/widget-wide" style="width:600px; height:130px; border:0px;"></iframe>
+</p>
+<ul>
+<li>
+On the asset page, click to download it and open in Unity    <b>. </b>This may redirect you to the Unity Editor.
+</li>
+<li>
+Back to the Unity Editor, the Asset Store tab will appear. Scroll down until you find the <b>Import</b> button, and click on it.
+</li>
+<li>
+If prompted to confirm that you are importing a complete project, click on <b>Import.</b>
+</li>
+</ul>
+<p>
+    The Import Unity Package window will appear. Since we are using just the
+    essential assets of this package to create our own game, we don’t need to
+    import the entire package.
+</p>
+<ul>
+    <li>
+        Click on the <b>None</b> button to deselect all.
+    </li>
+    <li>
+        Check the entire <b>Animations</b> folder.
+    </li>
+    <li>
+        Check the <b>Animator</b> folder.
+    </li>
+    <li>
+        Under <b>Materials, </b>check the <b>Character</b>
+        physic material.
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="345"
+        height="374"
+        src="img/clip_image010.jpg"
+    />
+</p>
+<ul>
+    <li>
+Inside <b>Scripts &gt; LevelScripts,</b> select the        <b>ThirdPersonOrbitCamBasic</b> script.
+    </li>
+    <li>
+        Check the entire <b>PlayerScripts</b> folder.
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="346"
+        height="379"
+        src="img/clip_image012.jpg"
+    />
+</p>
+<ul>
+    <li>
+        Scroll down until the <b>ProjectSettings</b> folder, and
+        check the <b>InputManager</b> asset.
+    </li>
+    <li>
+        Click on <b>Import.</b>
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="342"
+        height="379"
+        src="img/clip_image014.jpg"
+    />
+</p>
+<h2>
+    <b>Configuring the player avatar</b>
+</h2>
+<p>
+    Now we can proceed to setup the player avatar. If you have any custom
+    model, you can import it right now and place it into the scene. Note that
+    it has to be a Mecanim
+    <a target="_blank" href="https://docs.unity3d.com/Manual/AvatarCreationandSetup.html">
+        humanoid
+    </a>
+    compatible model. For this tutorial, we will simplify and use on of Unity’s
+    standard assets, <b>Ethan</b>. Click on the banner above to get it, from the Unity Standart Assets package:
+</p>
+<p>
+<iframe src="https://assetstore.unity.com/linkmaker/embed/package/32351/widget-wide-light" style="width:600px; height:130px; border:0px;"></iframe>
+</p>
+<ul>
+    <li>
+On the asset page, click to download it and open in Unity . This may redirect you to the Unity Editor.
+    </li>
+    <li>
+Back to the Unity Editor, the Asset Store tab (or the Package Manager window) will appear. Scroll down until you find the Import button, and click on it.
+    </li>
+<li>
+On the Import Unity Package window that twill appear, click on <b>None.</b>
+</li>
+<li>
+    Scroll down until you find the <b>Ethan.fbx</b> model, and
+    select it.
+</li>
+    <li>
+        Click on <b>Import.</b>
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="485"
+        height="375"
+        src="img/clip_image016.jpg"
+    />
+</p>
+<ul type="disc">
+    <li>
+Under the <b>Assets</b> folder, go to        <b>Standard</b>
+        <b>
+            Assets &gt; Characters &gt; ThirdPersonCharacter &gt; Models.
+        </b>
+    </li>
+    <li>
+        Drag the <b>Ethan </b>model to the scene.
+    </li>
+    <li>
+        Under the <b>Inspector, </b>set the position to 0, 0, 0.
+    </li>
+    <li>
+Open the <b>Tag</b> selection, and choose        <b>Player</b>.
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="378"
+        height="156"
+        src="img/clip_image018.jpg"
+    />
+</p>
+<p>
+    Before adding the player actions, we need to setup some components on the
+    avatar.
+</p>
+<ul>
+    <li>
+On the <b>Animator, </b>select the <b>Controller</b> parameter and choose        <b>CharacterController</b>.<b></b>
+    </li>
+</ul>
+<p>
+    <b> </b>
+</p>
+<p>
+    <img
+        border="0"
+        width="378"
+        height="111"
+        src="img/clip_image020.jpg"
+    />
+</p>
+<p>
+    Now we need to setup the player physics components.
+</p>
+<ul>
+    <li>
+Click on        <b>Add Component &gt; Physics &gt; Capsule Collider.</b>
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="235"
+        height="345"
+        src="img/clip_image022.jpg"
+    />
+</p>
+<p>
+    Next, we need to setup the collider so it fits the player. The following
+    values are for the Ethan avatar.
+</p>
+<ul>
+<li>
+Select, for the <b>Material</b> parameter, the    <b>Character</b> physic material.
+</li>
+<li>
+    Set the center of the collider to 0, 0.79, 0.
+</li>
+<li>
+    Set the radius to 0.26.
+</li>
+<li>
+    Set the Height to 1.6.
+</li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="380"
+        height="158"
+        src="img/clip_image024.jpg"
+    />
+</p>
+<p>
+    When configuring the Capsule Collider on your own character avatar, you
+    must avoid the following situation:
+</p>
+<p>
+    <img
+        border="0"
+        width="586"
+        height="150"
+        src="img/clip_image026.png"
+    />
+</p>
+<p>
+    If the collider end is positioned above the mesh end, the character will
+    get stuck when trying to move. Do not let the avatar mesh surpass the
+    collider! The correct position is set when the bottom of the collider is at
+    the same level or under the mesh end:
+</p>
+<p>
+    <img
+        border="0"
+        width="586"
+        height="150"
+        src="img/clip_image028.png"
+    />
+</p>
+<p>
+    As a reference, to centralize the collider correctly, check the mesh size
+    and use its height as the collider Height parameter. For the Center
+    position, you may use half of the collider height minus 0.01, as the Y
+    value of the parameter. After setting it, remember to check if the
+    situation described above does not occur.
+</p>
+<p>
+    Now we need to add the <b>RigidBody</b> component to the player.
+</p>
+<ul>
+    <li>
+        Click on <b>Add Component &gt; Physics &gt; RigidBody.</b>
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="225"
+        height="339"
+        src="img/clip_image030.jpg"
+    />
+</p>
+<ul>
+    <li>
+        Set the player <b>Mass.</b> We will use 70 for Ethan.
+    </li>
+    <li>
+Under the <b>Constraints</b> section, check the <b>Freeze Rotation</b> options for the        <b>X, Y, Z </b>axes.
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="364"
+        height="199"
+        src="img/clip_image032.jpg"
+    />
+</p>
+<h2>
+    <b>Setting the player actions</b>
+</h2>
+<p>
+    Now it’s time to setup the player actions. The player actions are defined
+    by behaviours, each one implemented in completely independent scripts. All behaviours are
+    controlled by a behaviour manager, that defines who is the active player action.
+    The manager also contains common features for all behaviours. This design opens
+    the possibility to enable or disable player actions even during runtime.
+</p>
+<ul>
+<li>
+With Ethan selected, click on    <b>Add Component &gt; Scripts &gt; Basic Behaviour.</b>
+</li>
+    <li>
+On the <b>Player Camera </b>parameter of the script, drag the        <b>Main Camera</b>.
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="386"
+        height="111"
+        src="img/clip_image034.jpg"
+    />
+</p>
+<p>
+    This is the script responsible for managing the player behaviours. It contains some common variables that you can play with, if you desire. Now we
+can start adding the custom behaviours. The first one is the    <b>Move Behaviour</b>, responsible for player actions like walk,
+    run, sprint, and jump. It is usually the default player behaviour.
+</p>
+<ul>
+    <li>
+Click on        <b>Add Component &gt; Scripts &gt; Move Behaviour.</b>
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="378"
+        height="165"
+        src="img/clip_image036.jpg"
+    />
+</p>
+<p>
+You can play with the parameters of this script if you desire. Check the    <b>README</b> file that comes with the package for more details
+    about each one of them. We’ll leave the default values for this tutorial.
+    Now we 	will add the behaviour responsible for the strafe movement and the
+    aiming mode.
+</p>
+<ul>
+    <li>
+Click on        <b>Add Component &gt; Scripts &gt; Aim Behaviour Basic.</b>
+    </li>
+    <li>
+Click on the <b>Crosshair</b> parameter, and select        <b>DropdownArrow</b> (or any other custom texture you want to
+        use).
+    </li>
+    <li>
+On the <b>Aim Pivot Offset</b> parameter, change the        <b>Y </b>value to 1.
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="377"
+        height="142"
+        src="img/clip_image038.jpg"
+    />
+</p>
+<p>
+Depending on your player’s height, you may have to adjust the    <b>Aim Pivot Offset </b>and <b>Aim Cam Offset</b>
+    parameters. Remember to check the <b>README</b> for more
+    information about specific parameters. Finally, we can add a custom extra
+    behaviour, responsible for making the player avatar fly over the
+    environment.
+</p>
+<ul>
+    <li>
+Click on        <b>Add Component &gt; Scripts &gt; Fly Behaviour.</b>
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="378"
+        height="113"
+        src="img/clip_image040.jpg"
+    />
+</p>
+<p>
+We’ll leave the parameters as is, but you can always check the    <b>README</b> file for more information on changing this values.
+</p>
+<h2>
+    <b>Setting the third person camera</b>
+</h2>
+<p>
+    The last setup we need is to set our camera as a <b>3<sup>rd</sup> person</b>
+    point of view, which will orbit around the player and follow him during his
+    movements.
+</p>
+<ul>
+    <li>
+On the <b>Hierarchy</b>, click on the        <b>Main Camera</b>.
+    </li>
+    <li>
+        Click on
+        <b>
+            Add Component &gt; Scripts &gt; Third Person Orbit Cam Basic
+        </b>
+        script.
+    </li>
+    <li>
+        On the <b>Player</b> parameter, drag Ethan GameObject (or any other custom avatar you have chosen).
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="367"
+        height="219"
+        src="img/clip_image042.jpg"
+    />
+</p>
+<p>
+    Now that we have everything ready, we can play the scene and test it. Now is a good time to save the project and the scene.
+</p>
+<ul>
+    <li>
+    Use the <b>mouse</b> to move the camera.
+    </li>
+    <li>
+    Press the <b>directional</b> or <b>w,a,s,d</b> keys to move.
+    </li>
+    <li>
+    You can control the movement speed using the <b>mouse scroll</b>.
+    </li>
+</ul>
+
+<p>
+    <img
+        width="32.5%"
+        src="img/camera.gif"
+    />
+    <img
+        width="32.5%"
+        src="img/walk.gif"
+    />
+    <img
+        width="32.5%"
+        src="img/run.gif"
+    />
+    <ul>
+    <li>
+    Hold the <b>left shift</b> while moving to sprint, and press <b>space bar</b> to jump.
+    </li>
+    <li>
+    Hold the <b>right mouse button</b> to aim. While aiming, press the middle mouse button to switch shoulders.
+    </li>
+    <li>
+    Press key <b>f</b> to toggle the fly mode.
+    </li>
+</ul>
+<p>
+    <img
+        width="32.5%"
+        src="img/sprint_jump.gif"
+    />
+    <img
+        width="32.5%"
+        src="img/aim.gif"
+    />
+    <img
+        width="32.5%"
+        src="img/fly.gif"
+    />
+</p>
+
+
+<p>
+This asset features a <b>keyboard + mouse</b> setup input, and also comes with full <b>Xbox One Controller</b> support. For the complete controls scheme, you can run 
+the <b>demo scene</b> that comes with the asset. Since you will need to import all the files from the package, we recommend that you start a new 
+project and import the full asset into it. Once loaded, play the demo scene and press <b>F2</b> to see the keyboard + mouse scheme, or the Xbox One Controller 
+<b>Menu button</b> <span class="buttonImage"></span> to view the gamepad scheme.
+</p>
+<h2>
+    <b>Conclusion and next steps</b>
+</h2>
+<p>
+     Now that you have basics to start with, you can try to design you own custom player actions. What about making the player swim? Or even a melee combat system?
+</p>
+<p>
+    The <b>3rd Person Controller + Fly Mode</b> asset was built to make easy the task of adding new player behaviours in a completely independent manner.
+    You can enable and disable actions during runtime, temporarily overwrite the active behaviour, and more.
+    Take a look at the commented methods of the <b>Basic Behaviour</b> class, the <b>README</b> file, and start coding your own player behaviours right now!
+    </p>
+    <p>
+    If you enjoyed this package and want to know more about other custom player
+    actions that can buy you some time and speedup the game creation process, we have a hint for you. We invite you to take a look at the
+    <a  target="_blank" 
+        href="http://u3d.as/1LDc"
+    >
+        Third Person Shooter Bundle
+    </a>
+    <b> </b>
+    asset, a complete starter kit for any <b>third-person shooter</b> game:
+</p>
+<p>
+</p>
+<p>
+<iframe src="https://assetstore.unity.com/linkmaker/embed/package/163222/widget-wide" style="width:600px; height:130px; border:0px;"></iframe>
+</p>
+<p>
+One of the included packages, the <a  target="_blank" href="http://u3d.as/X6v">Cover + Shooting System - Third Person Shooter</a>, comes with 2 extra behaviours, besides the basic locomotions: the <b>cover system</b>, with environment interactions, and a complete
+<b>shooting system</b>, with fully interactive weapons, particles and hittable targets. A time and money saver!
+</p>
+<p>
+The other package included, the <a  target="_blank" href="http://u3d.as/1MpM	">Enemy AI</a>, contains a complete <b>AI system</b> with instantly configurable enemy <b>NPCs</b>, featuring a plug and play, expandable <b>FSM</b> (finite state machine). With that package, you can setup enemies in your shooter game within minutes!
+</p>
+<p>
+        And that's the conclusion for our third person walking simulation game setup tutorial. We want to thank you for getting in this journey with us!
+</p>
+<h2>
+    <b>About the author</b>
+</h2>
+<p>
+    <img
+        width="128"
+        height="128"
+        src="img/clip_image044.jpg"
+        align="left"
+        hspace="15"
+    />
+    <p>
+    Graduated in Computer Science, and with a master degree in <b>Artificial
+    Intelligence &amp; High-Performance Computing</b>, <a target="_blank" href="https://homepages.dcc.ufmg.br/~allonman/">Vinicius Marques</a> has started
+    working with state of the art concepts and technologies, like Machine Learning and Parallel &amp; Distributed Computing. These areas, in particular, later
+    defined some actual IT trends: <b>Big Data</b> and
+    <b>Data Science</b>.
+    </p>
+    <p>
+    Even working with state of the art tech, the passion for the games was never
+    abandoned, taking an important role in his academic and personal lives.
+    Having worked with Data Science/Big Data until recently, he defined that it
+    was time to follow his passion and dedicate himself to what really gives
+    him day by day motivation: creating games. Since then, he has dedicated his professional life to projects in many game related areas, such as <b>Virtual Reality,
+	    Augmented Reality, Artificial Intelligence</b> and <b>Gameplay mechanics</b>.
+</p>
+</p>
+
+<p>
+Click <a target="_blank" href="https://homepages.dcc.ufmg.br/~allonman/">here</a> to visit the
+    author’s page.
+</p>
+</div>
+</body>
