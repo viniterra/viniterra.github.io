@@ -1,0 +1,15 @@
+{
+"companyName": "Vinicius Marques",
+"productName": "Third Person Shooter Bundle",
+"productVersion": "1.0",
+"dataUrl": "LightGun.data.unityweb",
+"wasmCodeUrl": "LightGun.wasm.code.unityweb",
+"wasmFrameworkUrl": "LightGun.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.21f1"
+}
