@@ -1,0 +1,33 @@
+TITLE:
+--------------------------------------------------------------------------------------------
+Utilizacao de ambientes paralelos no processo de aprendizado de algoritmos de busca de
+caminho em tempo real
+
+ABSTRACT:
+--------------------------------------------------------------------------------------------
+The constant evolution of electronic games enables the creation of increasingly realistic
+and immersive environments. Along with this evolution, it is necessary that the interaction
+between game and player also go towards realism, where Artificial Intelligence
+is one of the areas responsible for providing such interaction. Moreover, the evolution
+of the hardware present in video-games, such as multi-core processors, is remarkable.
+The presence of parallel environments changes the paradigm of game programming,
+and such changes also apply to Artificial Intelligence algorithms. One of the steps
+in the design of artificial intelligence for games is the movement of entities inside a
+game. The main technique used to control the movement of these entities is the path-
+finding, which consist in finding a best cost path between two points. Although in
+most cases traditional algorithms such as A* solve this problem without compromising
+performance, the increase in the size and complexity of the maps and also the
+presence of a massive number of entities in the same environment makes the use of
+these algorithms affect the game performance. This problem is solved by the real-time
+search algorithms, where the search occurs in a limited area and does not increase with
+the size of problem. Real-time search algorithms have a learning component, which
+avoids local minima and improve the results for future searches, in order to reach the
+minimum cost path. This process is named convergence. In this work, we present a
+parallelization strategy that aims to reduce the time of convergence, keeping the real
+time constraints of this type of search. The parallelization technique consist on the
+use of auxiliary searches without real-time restrictions, where all the searches share the
+learning acquired with the main search. The empirical evaluation, performed on Cell
+Broadband Engine Architecture, shows that even with the additional cost required for
+the coordination of searches, the reduction in the time to convergence is significant,
+showing gains both in searches occurring in environments with fewer local minima and
+in larger searches, where performance improvement is even better.

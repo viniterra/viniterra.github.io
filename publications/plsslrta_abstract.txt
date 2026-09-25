@@ -1,0 +1,26 @@
+TITLE:
+---------------------------------------------------------------------
+Speeding Up Learning in Real-time Search through Parallel Computing
+
+ABSTRACT:
+---------------------------------------------------------------------
+Real-time search algorithms solve the problem of
+path planning, regardless the size and complexity of the maps,
+and the massive presence of entities in the same environment.
+In such methods, the learning step aims to avoid local minima
+and improve the results for future searches, ensuring the
+convergence to the optimal path when the same planning
+task is solved repeatedly. However, performing search in a
+limited area due to real-time constraints makes the run to
+convergence a lengthy process. In this work, we present a
+parallelization strategy that aims to reduce the time to 
+convergence, maintaining the real-time properties of the search.
+The parallelization technique consists on using auxiliary searches
+without the real-time restrictions present in the main search.
+In addition, the same learning is shared by all searches. The
+empirical evaluation shows that even with the additional cost
+required to coordinate the auxiliary searches, the reduction in
+time to convergence is significant, showing gains from searches
+occurring in environments with fewer local minima to larger
+searches on complex maps, where performance improvement
+is even better.
