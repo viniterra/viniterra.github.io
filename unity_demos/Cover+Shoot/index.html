@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Cover + Shooting System - Third Person Controller</title>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+	var gameName = new URL(window.location.href).searchParams.get("mode");
+	if(gameName != null)
+	{
+		var gamePath = "Build/"+gameName+".json";
+		var gameInstance = UnityLoader.instantiate("gameContainer", gamePath);
+	}
+
+	window.onload = function()
+	{
+		if(gameName != null)
+			document.getElementById(gameName).style.backgroundColor = "rgba(30, 174, 211, 1)";
+	};
+    </script>
+  </head>
+  <body>
+  <div style="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family:Helvetica, Verdana, Arial, sans-serif; font-size:18px">
+  <div style="margin-bottom:5px; text-align:center">Cover + Shooting System - Third Person Controller</div>
+    <div id="gameContainer" style="width: 960px; height: 540px; margin: auto; background-color:rgba(34, 44, 54, 1); text-align:center; line-height:540px; font-size:40px; color:white">Select Game Mode</div>
+    <div style="margin-top:5px">
+	<div style="width:45%; margin-right:5%; text-align:center; float:left"><a href="index.html?mode=Tutorial" style="text-decoration: none">
+	    <div id="Tutorial" style="width:100px; height:40px; line-height:40px; background-color:rgba(34, 44, 54, 1); color:white; float:right; cursor:pointer">Tutorial</div>
+	</a></div>
+	<div style="width:25%; margin-left:5%; text-align:center; float:left"><a href="index.html?mode=TimeTrial" style="text-decoration: none">
+	    <div id="TimeTrial" style="width:100px; height:40px; line-height:40px; background-color:rgba(34, 44, 54, 1); color:white; float:left; cursor:pointer">Time Trial</div>
+	</a></div>
+	<div style="width:20%; text-align:center; float:right"><a href="cover+shoot.zip" style="text-decoration: none">
+	<div id="Download" style="width:100px; height:40px; line-height:40px; background-color:rgba(34, 44, 54, 1); color:white; float:right; cursor:pointer">Download</div>
+	</a></div>
+    </div>
+  </div>
+  </body>
+</html>
